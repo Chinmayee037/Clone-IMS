@@ -1,0 +1,38 @@
+.regdCard{
+    min-height: 28rem;
+    width: 34rem;
+}
+.RegdBtn{
+    background-color: #273B7A;
+    color: white;
+    width: 10rem;
+}
+.cancelBtn{
+    width: 10rem;
+}
+.mainText{
+    color: #273B7A;
+    font-weight: 400;
+}
+.parentRow input {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    border-left: 0;
+}
+.parentRow .brd {
+    border-left: 1px solid red;
+}
+.parentRow .icons{
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    height: 38px;   
+    border: 1px solid gainsboro;
+    border-right: 0;
+}
+.login a{
+    cursor: pointer;
+}
+.main{
+    background-color: #273B7A;
+    min-height: 100vh;
+}

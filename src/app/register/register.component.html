@@ -1,0 +1,106 @@
+<div class="main d-flex justify-content-center align-items-center">
+  <div class="card shadow regdCard">
+    <div class="mainText d-flex justify-content-center py-3">
+      <h3>Register Here</h3>
+    </div>
+    <div class="row p-2 mx-5 parentRow">
+      <form [formGroup]="registerForm">
+        <div class="row">
+          <div class="d-flex align-items-center">
+            <span class="icons p-2 bg-light"
+              ><i class="bi bi-person-fill"></i
+            ></span>
+            <input
+              type="text"
+              class="form-control brd"
+              placeholder="First Name"
+              formControlName="firstName"
+              [ngClass]="{
+                'is-invalid && brd':
+                  registerForm.get('firstName')?.invalid &&
+                  registerForm.get('firstName')?.touched
+              }"
+            />
+          </div>
+          <div class="text-danger ms-4" *ngIf="registerForm.get('firstName')?.invalid &&
+          registerForm.get('firstName')?.touched" > <small>*First name is required</small> 
+          </div>
+
+          <div class="mt-3 d-flex align-items-center">
+            <span class="icons bg-light p-2"
+              ><i class="bi bi-person-fill"></i
+            ></span>
+            <input
+              type="text"
+              class="form-control brd"
+              placeholder="Last Name"
+              formControlName="lastName"
+              [ngClass]="{
+                'is-invalid && brd':
+                  registerForm.get('lastName')?.invalid &&
+                  registerForm.get('lastName')?.touched
+              }"
+            />
+          </div>
+          <div class="text-danger ms-4" *ngIf="registerForm.get('lastName')?.invalid &&
+          registerForm.get('lastName')?.touched" > <small>*Last name is required</small> 
+          </div>
+        </div>
+        <div class="mt-3 d-flex align-items-center">
+          <span class="icons bg-light p-2"
+            ><i class="bi bi-envelope-fill"></i
+          ></span>
+          <input
+            type="email"
+            class="form-control brd"
+            placeholder="Email id"
+            formControlName="email"
+            [ngClass]="{
+              'is-invalid && brd':
+                registerForm.get('email')?.invalid &&
+                registerForm.get('email')?.touched
+            }"
+          />
+        </div>
+        <div class="text-danger ms-4" *ngIf="registerForm.get('email')?.invalid &&
+        registerForm.get('email')?.touched" > <small>*Email is required</small> 
+        </div>
+
+        <div class="passW mt-3 d-flex">
+          <span class="icons bg-light p-2"
+            ><i class="bi bi-lock-fill"></i
+          ></span>
+          <input
+            type="password"
+            class="form-control brd"
+            placeholder="Password"
+            formControlName="password"
+            [ngClass]="{
+              'is-invalid && brd':
+                registerForm.get('password')?.invalid &&
+                registerForm.get('password')?.touched
+            }"
+          />
+        </div>
+        <div class="text-danger ms-4" *ngIf="registerForm.get('password')?.invalid &&
+        registerForm.get('password')?.touched" > <small>*Password is required</small> 
+        </div>
+
+        <div class="col-12 my-3 d-flex justify-content-center">
+          <button class="btn btn-outline-secondary cancelBtn" (click)="reSet()">Cancel</button>
+          <button
+            class="btn RegdBtn ms-3"
+            [disabled]="registerForm.invalid"
+            (click)="Registered()"
+          >
+            <a>Register</a>
+          </button>
+        </div>
+        <div class="login d-flex justify-content-center mt-2 mb-3">
+          Already have an account? Please
+          <a class="ms-1 pe-auto" (click)="logIn()"> Login</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

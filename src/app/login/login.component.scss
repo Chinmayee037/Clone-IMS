@@ -1,0 +1,30 @@
+.card-img-top{
+    height: 70px;
+    width: 70px;
+}
+
+.main{
+    background-color: #273B7A;
+    min-height: 100vh;
+}
+.logincolor{
+    background-color: #273B7A;
+    width: 274px;
+    color: white;
+    font-weight: 600;
+}
+.logincolor:hover{
+    background-color: white;
+    border: #273B7A 1px solid;
+    color: #273B7A;
+    font-weight: 600;
+}
+
+.cardColor{
+    background-color: #F8F9FA;
+    width: 25rem;
+    height: 29rem;
+}
+.register a{
+    cursor: pointer;
+}
