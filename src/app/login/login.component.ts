@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   loginForm!: FormGroup;
   userCredentials: any[] = [];
+  FirstName: any;
+  LastName: any;
   constructor(
     private fb: FormBuilder,
     public service: UserService,
@@ -33,36 +35,62 @@ export class LoginComponent implements OnInit {
     this.isLogin();
   }
   isLogin() {
-    if (localStorage.getItem('useremail') && localStorage.getItem('password')) {
+    if ( localStorage.getItem('useremail') &&
+    localStorage.getItem('password') &&
+    localStorage.getItem('firstName') &&
+    localStorage.getItem('lastName')) {
       this.service.isLogin = true;
       this.router.navigate(['/invoice']);
     }
   }
-  Login() {
-    const LoginformValue = this.loginForm.value;
-    console.log('Entered Email:', LoginformValue.useremail);
-    console.log('Entered Password:', LoginformValue.password);
+  // Login() {
+  //   const LoginformValue = this.loginForm.value;
+  //   console.log('Entered Email:', LoginformValue.useremail);
+  //   console.log('Entered Password:', LoginformValue.password);
 
-    if (
-      this.userCredentials[0].Email == this.loginForm.get('useremail')?.value &&
-      this.userCredentials[0].Password == this.loginForm.get('password')?.value
-    ) {
+  //   if (
+  //     this.userCredentials[0].Email == this.loginForm.get('useremail')?.value &&
+  //     this.userCredentials[0].Password == this.loginForm.get('password')?.value
+  //   ) {
+  //     this.isLogin();
+  //     localStorage.setItem('useremail', this.loginForm.get('useremail')?.value);
+  //     localStorage.setItem('password', this.loginForm.get('password')?.value);
+  //   } else {
+  //     // Reset form control values
+  //     // note: It allows you to safely access properties of an object that may be null or undefined without causing a runtime error.
+  //     this.loginForm.get('useremail')?.setValue('');
+  //     this.loginForm.get('password')?.setValue('');
+  //   }
+  // }
+
+  Login() {
+    const loginFormValue = this.loginForm.value;
+  
+    const matchingAdmin = this.userCredentials.filter((user) =>  { 
+     return user.email === loginFormValue.useremail &&
+            user.password === loginFormValue.password 
+          });   
+    // console.log("matchingAdmin", matchingAdmin);
+   
+    if (matchingAdmin) {
       this.isLogin();
-      localStorage.setItem('useremail', this.loginForm.get('useremail')?.value);
-      localStorage.setItem('password', this.loginForm.get('password')?.value);
+      localStorage.setItem('useremail', loginFormValue.useremail);
+      localStorage.setItem('password', loginFormValue.password);
+      localStorage.setItem('firstName',matchingAdmin[0].firstName);
+      localStorage.setItem('lastName',matchingAdmin[0].lastName);
+
+
     } else {
-      // Reset form control values
-      // note: It allows you to safely access properties of an object that may be null or undefined without causing a runtime error.
       this.loginForm.get('useremail')?.setValue('');
       this.loginForm.get('password')?.setValue('');
     }
   }
-
+    
   getUserCred() {
     return this.service.getUserCred().subscribe((res: any[]) => {
       console.log('response', res);
       this.userCredentials = res;
-      console.log(' this.userCredentials[0]', this.userCredentials[0].Email);
+      // console.log(' this.userCredentials[0]', this.userCredentials[0].Email);
     });
   }
 

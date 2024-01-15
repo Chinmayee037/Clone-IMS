@@ -7,7 +7,7 @@
   </div>
   <div class="col-6 d-flex justify-content-end">
     
-    <div class="dropdown" *ngFor="let i of userCredential">
+    <div class="dropdown" >
       <!-- notification icon -->
       <a
         class="btn dropdown-toggle fw-bold"
@@ -20,7 +20,8 @@
         <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
         <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
       </svg>
-        <span class="textclr ms-2 fw-bold">{{i.FirstName+ ' ' +i.LastName}}</span>
+        <!-- <span class="textclr ms-2 fw-bold">{{i.FirstName+ ' ' +i.LastName}}</span> -->
+      <span class="textclr ms-2 fw-bold"> {{adminFullName}} </span>
       </a>
       <ul class="dropdown-menu logoutMenu" aria-labelledby="dropdownMenuLink">
         <!-- <li><a class="dropdown-item">Profile</a></li>

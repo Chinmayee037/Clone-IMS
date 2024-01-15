@@ -40,7 +40,6 @@ export class RegisterComponent implements OnInit {
   getUserCred() {
     return this.service.getUserCred().subscribe((res: any[]) => {
       this.userCredentials = res;
-      console.log(' this.userCredentials[0]', this.userCredentials[0].Email);
     });
   }
 
@@ -48,7 +47,8 @@ export class RegisterComponent implements OnInit {
     const registerFormData = this.registerForm.value;
     this.service.postUserCred(registerFormData).subscribe((res) => {
       this.userCredentials = res;
-      console.log('new added admin', this.userCredentials);
+      this.service.isRegister = false;  
+      this.router.navigate(['/login']);
     });
     this.registerForm.reset();
   }

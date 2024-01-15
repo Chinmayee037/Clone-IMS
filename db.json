@@ -244,7 +244,7 @@
       "id": "31",
       "clientname": "Liam Wilson",
       "date": "2023-12-19",
-      "Amount": "5566",
+      "Amount": "76543",
       "duedate": "2023-12-01",
       "status": "due"
     },
@@ -295,15 +295,23 @@
       "Amount": "112",
       "duedate": "2023-12-03",
       "status": "receivedpayment"
+    },
+    {
+      "id": "38",
+      "clientname": "Smytthen",
+      "date": "2024-01-13",
+      "Amount": "432",
+      "duedate": "2024-01-11",
+      "status": "receivedpayment"
     }
   ],
   "adminCredentials": [
     {
-      "id": "1",
-      "FirstName": "Chinmayee",
-      "LastName": "Sethy",
-      "Email": "abc@gmail.com",
-      "Password": "Abc@1234567890"
+      "firstName": "Chinmayee",
+      "lastName": "Sethy",
+      "email": "abc@gmail.com",
+      "password": "Abc@1234567890",
+      "id": 1
     }
   ]
 }

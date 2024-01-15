@@ -7,92 +7,56 @@
       <form [formGroup]="registerForm">
         <div class="row">
           <div class="d-flex align-items-center">
-            <span class="icons p-2 bg-light"
-              ><i class="bi bi-person-fill"></i
-            ></span>
-            <input
-              type="text"
-              class="form-control brd"
-              placeholder="First Name"
-              formControlName="firstName"
-              [ngClass]="{
+            <span class="icons p-2 bg-light"><i class="bi bi-person-fill"></i></span>
+            <input type="text" class="form-control brd" placeholder="First Name" formControlName="firstName" [ngClass]="{
                 'is-invalid && brd':
                   registerForm.get('firstName')?.invalid &&
                   registerForm.get('firstName')?.touched
-              }"
-            />
+              }" />
           </div>
           <div class="text-danger ms-4" *ngIf="registerForm.get('firstName')?.invalid &&
-          registerForm.get('firstName')?.touched" > <small>*First name is required</small> 
+          registerForm.get('firstName')?.touched"> <small>*First name is required</small>
           </div>
 
           <div class="mt-3 d-flex align-items-center">
-            <span class="icons bg-light p-2"
-              ><i class="bi bi-person-fill"></i
-            ></span>
-            <input
-              type="text"
-              class="form-control brd"
-              placeholder="Last Name"
-              formControlName="lastName"
-              [ngClass]="{
+            <span class="icons bg-light p-2"><i class="bi bi-person-fill"></i></span>
+            <input type="text" class="form-control brd" placeholder="Last Name" formControlName="lastName" [ngClass]="{
                 'is-invalid && brd':
                   registerForm.get('lastName')?.invalid &&
                   registerForm.get('lastName')?.touched
-              }"
-            />
+              }" />
           </div>
           <div class="text-danger ms-4" *ngIf="registerForm.get('lastName')?.invalid &&
-          registerForm.get('lastName')?.touched" > <small>*Last name is required</small> 
+          registerForm.get('lastName')?.touched"> <small>*Last name is required</small>
           </div>
         </div>
         <div class="mt-3 d-flex align-items-center">
-          <span class="icons bg-light p-2"
-            ><i class="bi bi-envelope-fill"></i
-          ></span>
-          <input
-            type="email"
-            class="form-control brd"
-            placeholder="Email id"
-            formControlName="email"
-            [ngClass]="{
+          <span class="icons bg-light p-2"><i class="bi bi-envelope-fill"></i></span>
+          <input type="email" class="form-control brd" placeholder="Email id" formControlName="email" [ngClass]="{
               'is-invalid && brd':
                 registerForm.get('email')?.invalid &&
                 registerForm.get('email')?.touched
-            }"
-          />
+            }" />
         </div>
         <div class="text-danger ms-4" *ngIf="registerForm.get('email')?.invalid &&
-        registerForm.get('email')?.touched" > <small>*Email is required</small> 
+        registerForm.get('email')?.touched"> <small>*Email is required</small>
         </div>
 
         <div class="passW mt-3 d-flex">
-          <span class="icons bg-light p-2"
-            ><i class="bi bi-lock-fill"></i
-          ></span>
-          <input
-            type="password"
-            class="form-control brd"
-            placeholder="Password"
-            formControlName="password"
-            [ngClass]="{
+          <span class="icons bg-light p-2"><i class="bi bi-lock-fill"></i></span>
+          <input type="password" class="form-control brd" placeholder="Password" formControlName="password" [ngClass]="{
               'is-invalid && brd':
                 registerForm.get('password')?.invalid &&
                 registerForm.get('password')?.touched
-            }"
-          />
+            }" />
         </div>
         <div class="text-danger ms-4" *ngIf="registerForm.get('password')?.invalid &&
-        registerForm.get('password')?.touched" > <small>*Password is required</small> 
+        registerForm.get('password')?.touched"> <small>*Password is required</small>
         </div>
 
         <div class="col-12 my-3 d-flex justify-content-center">
           <button class="btn btn-outline-secondary cancelBtn" (click)="reSet()">Cancel</button>
-          <button
-            class="btn RegdBtn ms-3"
-            [disabled]="registerForm.invalid"
-            (click)="Registered()"
-          >
+          <button class="btn RegdBtn ms-3" [disabled]="registerForm.invalid" (click)="Registered()">
             <a>Register</a>
           </button>
         </div>
