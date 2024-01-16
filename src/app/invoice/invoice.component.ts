@@ -26,9 +26,7 @@ export class InvoiceComponent implements OnInit, AfterViewInit {
   count:number = 0;
   tableSize:number =10;
 
-  sortDir = 1;//1= 'ASE' -1= DSC
   constructor(private service: UserService, private fb: FormBuilder) {
-    // this.sortArr('clientname');
   }
 
   ngOnInit() {
@@ -44,32 +42,6 @@ export class InvoiceComponent implements OnInit, AfterViewInit {
     localStorage.getItem('useremail');
     console.log('local storager', localStorage.getItem('useremail'));
   }
-
-  // table shorting-start
-  sortArr(colName:any){
-    this.userData= this.userData.sort((a:any,b:any)=>{
-      a= a[colName].toLowerCase();
-      b= b[colName].toLowerCase();
-      return a.localeCompare(b) * this.sortDir;
-    });
-  }
-  onSortClick(event:any) {
-    let target = event.currentTarget,
-      classList = target.classList;
-
-    if (classList.contains('fa fa-chevron-up')) {
-      classList.remove('fa fa-chevron-up');
-      classList.add('fa fa-chevron-down');
-      this.sortDir=-1;
-    } else {
-      classList.add('fa fa-chevron-up');
-      classList.remove('fa fa-chevron-down');
-      this.sortDir=1;
-    }
-    this.sortArr('clientname');
-  }
-  // table shorting-end
-
   // pagination
  onTableDataChange(event:any){
     this.page=event;
@@ -220,5 +192,6 @@ export class InvoiceComponent implements OnInit, AfterViewInit {
     const valid = /^\d+$/.test(control.value);
     return valid ? null : { invalidNumber: true };
   }
+  
   
 }

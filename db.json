@@ -312,6 +312,13 @@
       "email": "abc@gmail.com",
       "password": "Abc@1234567890",
       "id": 1
+    },
+    {
+      "firstName": "Test",
+      "lastName": "1",
+      "email": "test@gmail.com",
+      "password": "Test@1234567890",
+      "id": 2
     }
   ]
 }
