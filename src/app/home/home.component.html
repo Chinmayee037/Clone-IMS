@@ -12,8 +12,14 @@
     </div>
   </div> -->
 
+  <!-- Spinner added -->
+  <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#fff" 
+                type = "ball-square-spin" [fullScreen] = "true">
+                 <p style="color: white" > Loading... </p>
+  </ngx-spinner>
+
+
   <div class="container-fluid px-0" *ngIf="service.isLogin">
- 
     <div class="row mx-0 bg-white sticky-top">
       <app-header></app-header>
    </div>

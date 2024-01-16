@@ -14,6 +14,8 @@ import { LoginComponent } from './login/login.component';
 import { SearchPipe } from './search.pipe';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { RegisterComponent } from './register/register.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { NgxSpinnerModule } from 'ngx-spinner';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,9 @@ import { RegisterComponent } from './register/register.component';
     ReactiveFormsModule,
     FormsModule,
     CommonModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    BrowserAnimationsModule,
+    NgxSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent]
